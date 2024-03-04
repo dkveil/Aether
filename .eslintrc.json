@@ -2,7 +2,60 @@
 	"env": {
 		"browser": true,
 		"es2022": true,
-		"node": true
+		"node": true,
+		"jest": true,
+		"react/jsx-runtime": true
 	},
-	"extends": ["next/core-web-vitals", "eslint:recommended", "plugin:react/recommended", "plugin:@next/next/recommended"]
+	"extends": [
+		"next/core-web-vitals",
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@next/next/recommended",
+		"plugin:prettier/recommended"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"globals": {
+		"React": "readonly"
+	},
+	"plugins": ["react"],
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"no-undef": "error",
+		"no-var": "error",
+		"prefer-const": "error",
+		"eqeqeq": ["error", "always"],
+		"no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+		"react/prop-types": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"max-nested-callbacks": ["warn", 3],
+		"prettier/prettier": [
+			"warn",
+			{
+				"endOfLine": "auto"
+			}
+		],
+		"no-console": "warn"
+	},
+	"overrides": [
+		{
+			"files": ["**/*.ts", "**/*.tsx"],
+			"rules": {
+				"simple-import-sort/imports": "off",
+				"simple-import-sort/exports": "off"
+			}
+		}
+	]
 }

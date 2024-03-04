@@ -1,0 +1,9 @@
+/node_modules
+/dist
+/.sanity
+/logs
+/coverage
+.DS_Store
+*.pem
+*.tsbuildinfo
+*.local
